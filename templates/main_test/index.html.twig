@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Статистика продаж товаров{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+
+    <style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Статистика продаж товаров</h1>
+    <form action="{{ actionPath }}" method="get">
+        <label>Start</label>
+        <input type="date" name="date_start"/>
+        <label>End</label>
+        <input type="date" name="date_end"/>
+        <input type="submit" value="Filter">
+    </form>
+{#    {{ form(filterForm) }}#}
+    <table>
+        <tr>
+            <th>Название</th>
+            <th>Колличество продаж</th>
+            <th>Колличество дней продаж</th>
+            <th>Продаж в сутки</th>
+        </tr>
+        {% for line in statistic %}
+            <tr>
+                <td>{{ line['name'] }}</td>
+                <td>{{ line['all_sales'] }}</td>
+                <td>{{ line['days']|round(1, 'floor') }}</td>
+                <td>{{ line['sales_in_day']|round(1, 'floor') }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
