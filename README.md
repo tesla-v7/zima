@@ -1,1 +1,1 @@
-Еest task from Zima.
+Test task from Zima.
