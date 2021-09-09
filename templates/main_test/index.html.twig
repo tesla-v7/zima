@@ -17,12 +17,11 @@
     <h1>Статистика продаж товаров</h1>
     <form action="{{ actionPath }}" method="get">
         <label>Start</label>
-        <input type="date" name="date_start"/>
+        <input type="date" name="date_start" value="{{ dateStart }}"/>
         <label>End</label>
-        <input type="date" name="date_end"/>
+        <input type="date" name="date_end" value="{{ dateEnd }}"/>
         <input type="submit" value="Filter">
     </form>
-{#    {{ form(filterForm) }}#}
     <table>
         <tr>
             <th>Название</th>
