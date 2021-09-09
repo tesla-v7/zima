@@ -55,6 +55,11 @@ class RangeDateSale
         return $this->date_start;
     }
 
+    public function getDateStartInTimestamp(): int
+    {
+        return $this->date_start->getTimestamp();
+    }
+
     public function setDateStart(\DateTimeInterface $date_start): self
     {
         $this->date_start = $date_start;
@@ -66,6 +71,13 @@ class RangeDateSale
     {
         return $this->date_stop;
     }
+
+    public function getDateStopInTimestamp(): int
+    {
+        return $this->date_stop->getTimestamp();
+    }
+
+
 
     public function setDateStop(\DateTimeInterface $date_stop): self
     {
