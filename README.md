@@ -7,33 +7,32 @@
    
 **Запусл проекта локально**
 1. Получить проект: 
-```
-   git clone git@github.com:tesla-v7/zima.git
-```
-
+    ```
+       git clone git@github.com:tesla-v7/zima.git
+    ```
 1. Установить зависимости:
-```
-    cd zima
-    composer install
-```
+    ```
+        cd zima
+        composer install
+    ```
 1. Задать кредиталы полключения к базе в .env
-```
-    nano .env
-```
+    ```
+        nano .env
+    ```
 1. Создать базу данных в mysql.
-```
-   bin/console doctrine:database:create
-```
+    ```
+       bin/console doctrine:database:create
+    ```
 1. Запустить миграции:
-```
-   bin/console doctrine:migrations:migrate
-```
+    ```
+       bin/console doctrine:migrations:migrate
+    ```
 1. Заполнить базу тестовыми данными:
-```
-   bin/console doctrine:fixtures:load
-```
+    ```
+       bin/console doctrine:fixtures:load
+    ```
 1. Запустить приложение локально:
-```
-   symfony local:server:start
-```
+    ```
+       symfony local:server:start
+    ```
 1. Перейти по адресу [http://127.0.0.1:8000/main/sales](http://127.0.0.1:8000/main/sales)
