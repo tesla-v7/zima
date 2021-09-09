@@ -1,5 +1,6 @@
-**Тестовое задание для ZimaBlue**.
+**Тестовое задание для [ZimaBlue](https://www.youtube.com/watch?v=PbQiEoNEApY)**.
 Для работы приложения требутся приложения:
+
 1. Интерпритатор языка PHP(7.2.5) [установка](https://www.php.net/manual/ru/install.php).
 1. Пакетный менеджер composer [установка](https://getcomposer.org/download/).
 1. Фреймворк Symfony(6.1) [установка](https://symfony.com/doc/current/setup.html).
