@@ -19,6 +19,24 @@ class OrderRepository extends ServiceEntityRepository
         parent::__construct($registry, Order::class);
     }
 
+    public function findRangeDate(string $dateStart = null, string $dateEnd = null): ?array{
+        if($dateStart && $dateEnd){
+            return $this->createQueryBuilder('o')
+                ->andWhere('o.sale_date >= :date_start')
+                ->setParameter('date_start', $dateStart)
+                ->andWhere('o.sale_date <= :date_end')
+                ->setParameter('date_end', $dateEnd)
+                ->getQuery()
+                ->getResult();
+        }
+
+        return $this->findAll();
+//        return $this->createQueryBuilder('o')
+//            ->where('1')
+//            ->getQuery()
+//            ->getResult();
+    }
+
     // /**
     //  * @return Order[] Returns an array of Order objects
     //  */
